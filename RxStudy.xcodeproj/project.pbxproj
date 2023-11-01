@@ -10,11 +10,22 @@
 		531CF7682AF1B3B60054A915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7672AF1B3B60054A915 /* AppDelegate.swift */; };
 		531CF76A2AF1B3B60054A915 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7692AF1B3B60054A915 /* SceneDelegate.swift */; };
 		531CF76C2AF1B3B60054A915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF76B2AF1B3B60054A915 /* ViewController.swift */; };
-		531CF76F2AF1B3B60054A915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531CF76D2AF1B3B60054A915 /* Main.storyboard */; };
-		531CF7712AF1B3B70054A915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531CF7702AF1B3B70054A915 /* Assets.xcassets */; };
 		531CF7742AF1B3B70054A915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531CF7722AF1B3B70054A915 /* LaunchScreen.storyboard */; };
 		531CF77D2AF1B3F70054A915 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 531CF77C2AF1B3F70054A915 /* RxCocoa */; };
 		531CF77F2AF1B3F70054A915 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 531CF77E2AF1B3F70054A915 /* RxSwift */; };
+		531CF78F2AF215110054A915 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7832AF215110054A915 /* SignInViewModel.swift */; };
+		531CF7942AF215110054A915 /* PointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF78A2AF215110054A915 /* PointButton.swift */; };
+		531CF7952AF215110054A915 /* SignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF78B2AF215110054A915 /* SignTextField.swift */; };
+		531CF7962AF215110054A915 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF78D2AF215110054A915 /* SignUpViewController.swift */; };
+		531CF7972AF215110054A915 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF78E2AF215110054A915 /* PasswordViewController.swift */; };
+		531CF79A2AF215840054A915 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7982AF215830054A915 /* Extension+String.swift */; };
+		531CF79B2AF215840054A915 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7992AF215840054A915 /* Resource.swift */; };
+		531CF79E2AF215AD0054A915 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 531CF79D2AF215AD0054A915 /* SnapKit */; };
+		531CF7A02AF215C10054A915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531CF79F2AF215C10054A915 /* Assets.xcassets */; };
+		531CF7AC2AF2170F0054A915 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7A92AF2170F0054A915 /* BirthdayViewController.swift */; };
+		531CF7AD2AF2170F0054A915 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7AA2AF2170F0054A915 /* NicknameViewController.swift */; };
+		531CF7AE2AF2170F0054A915 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7AB2AF2170F0054A915 /* PhoneViewController.swift */; };
+		531CF7B02AF217770054A915 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7AF2AF217770054A915 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +33,20 @@
 		531CF7672AF1B3B60054A915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		531CF7692AF1B3B60054A915 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		531CF76B2AF1B3B60054A915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		531CF76E2AF1B3B60054A915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		531CF7702AF1B3B70054A915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		531CF7732AF1B3B70054A915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		531CF7752AF1B3B70054A915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		531CF7832AF215110054A915 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		531CF78A2AF215110054A915 /* PointButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointButton.swift; sourceTree = "<group>"; };
+		531CF78B2AF215110054A915 /* SignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTextField.swift; sourceTree = "<group>"; };
+		531CF78D2AF215110054A915 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		531CF78E2AF215110054A915 /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		531CF7982AF215830054A915 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		531CF7992AF215840054A915 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		531CF79F2AF215C10054A915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../SeSACRxThreads/SeSACRxThreads/Assets.xcassets; sourceTree = "<group>"; };
+		531CF7A92AF2170F0054A915 /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		531CF7AA2AF2170F0054A915 /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		531CF7AB2AF2170F0054A915 /* PhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		531CF7AF2AF217770054A915 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531CF79E2AF215AD0054A915 /* SnapKit in Frameworks */,
 				531CF77F2AF1B3F70054A915 /* RxSwift in Frameworks */,
 				531CF77D2AF1B3F70054A915 /* RxCocoa in Frameworks */,
 			);
@@ -60,15 +82,57 @@
 		531CF7662AF1B3B60054A915 /* RxStudy */ = {
 			isa = PBXGroup;
 			children = (
+				531CF7892AF215110054A915 /* CustomView */,
+				531CF7822AF215110054A915 /* SignIn */,
+				531CF78C2AF215110054A915 /* SignUp */,
+				531CF7A82AF2170F0054A915 /* SignUpOptional */,
 				531CF7672AF1B3B60054A915 /* AppDelegate.swift */,
 				531CF7692AF1B3B60054A915 /* SceneDelegate.swift */,
 				531CF76B2AF1B3B60054A915 /* ViewController.swift */,
-				531CF76D2AF1B3B60054A915 /* Main.storyboard */,
-				531CF7702AF1B3B70054A915 /* Assets.xcassets */,
+				531CF7982AF215830054A915 /* Extension+String.swift */,
+				531CF7992AF215840054A915 /* Resource.swift */,
+				531CF79F2AF215C10054A915 /* Assets.xcassets */,
 				531CF7722AF1B3B70054A915 /* LaunchScreen.storyboard */,
 				531CF7752AF1B3B70054A915 /* Info.plist */,
 			);
 			path = RxStudy;
+			sourceTree = "<group>";
+		};
+		531CF7822AF215110054A915 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				531CF7832AF215110054A915 /* SignInViewModel.swift */,
+				531CF7AF2AF217770054A915 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		531CF7892AF215110054A915 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				531CF78A2AF215110054A915 /* PointButton.swift */,
+				531CF78B2AF215110054A915 /* SignTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		531CF78C2AF215110054A915 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				531CF78D2AF215110054A915 /* SignUpViewController.swift */,
+				531CF78E2AF215110054A915 /* PasswordViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		531CF7A82AF2170F0054A915 /* SignUpOptional */ = {
+			isa = PBXGroup;
+			children = (
+				531CF7A92AF2170F0054A915 /* BirthdayViewController.swift */,
+				531CF7AA2AF2170F0054A915 /* NicknameViewController.swift */,
+				531CF7AB2AF2170F0054A915 /* PhoneViewController.swift */,
+			);
+			path = SignUpOptional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +154,7 @@
 			packageProductDependencies = (
 				531CF77C2AF1B3F70054A915 /* RxCocoa */,
 				531CF77E2AF1B3F70054A915 /* RxSwift */,
+				531CF79D2AF215AD0054A915 /* SnapKit */,
 			);
 			productName = RxStudy;
 			productReference = 531CF7642AF1B3B60054A915 /* RxStudy.app */;
@@ -121,6 +186,7 @@
 			mainGroup = 531CF75B2AF1B3B60054A915;
 			packageReferences = (
 				531CF77B2AF1B3F70054A915 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				531CF79C2AF215AD0054A915 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 531CF7652AF1B3B60054A915 /* Products */;
 			projectDirPath = "";
@@ -137,8 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531CF7742AF1B3B70054A915 /* LaunchScreen.storyboard in Resources */,
-				531CF7712AF1B3B70054A915 /* Assets.xcassets in Resources */,
-				531CF76F2AF1B3B60054A915 /* Main.storyboard in Resources */,
+				531CF7A02AF215C10054A915 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,23 +214,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531CF7B02AF217770054A915 /* SignInViewController.swift in Sources */,
+				531CF79A2AF215840054A915 /* Extension+String.swift in Sources */,
+				531CF7962AF215110054A915 /* SignUpViewController.swift in Sources */,
+				531CF78F2AF215110054A915 /* SignInViewModel.swift in Sources */,
 				531CF76C2AF1B3B60054A915 /* ViewController.swift in Sources */,
+				531CF7942AF215110054A915 /* PointButton.swift in Sources */,
+				531CF7AC2AF2170F0054A915 /* BirthdayViewController.swift in Sources */,
 				531CF7682AF1B3B60054A915 /* AppDelegate.swift in Sources */,
+				531CF7972AF215110054A915 /* PasswordViewController.swift in Sources */,
+				531CF7AD2AF2170F0054A915 /* NicknameViewController.swift in Sources */,
 				531CF76A2AF1B3B60054A915 /* SceneDelegate.swift in Sources */,
+				531CF7952AF215110054A915 /* SignTextField.swift in Sources */,
+				531CF79B2AF215840054A915 /* Resource.swift in Sources */,
+				531CF7AE2AF2170F0054A915 /* PhoneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		531CF76D2AF1B3B60054A915 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				531CF76E2AF1B3B60054A915 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		531CF7722AF1B3B70054A915 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -308,7 +376,6 @@
 				INFOPLIST_FILE = RxStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,7 +406,6 @@
 				INFOPLIST_FILE = RxStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -390,6 +456,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		531CF79C2AF215AD0054A915 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +476,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 531CF77B2AF1B3F70054A915 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		531CF79D2AF215AD0054A915 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 531CF79C2AF215AD0054A915 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
