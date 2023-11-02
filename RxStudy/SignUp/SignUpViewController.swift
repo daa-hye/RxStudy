@@ -7,13 +7,21 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignUpViewController: UIViewController {
+
+    let disposeBag = DisposeBag()
 
     let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
     let validationButton = UIButton()
     let nextButton = PointButton(title: "다음")
-    
+
+    let mailValue = BehaviorSubject(value: "")
+    let buttonColor = BehaviorSubject(value: UIColor.lightGray)
+    let validation = BehaviorSubject(value: false)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,13 +29,49 @@ class SignUpViewController: UIViewController {
         
         configureLayout()
         configure()
-        
+        bind()
+
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
 
     }
     
     @objc func nextButtonClicked() {
         navigationController?.pushViewController(PasswordViewController(), animated: true)
+    }
+
+    func bind() {
+
+        validation
+            .bind(with: self) { owner, value in
+                owner.nextButton.rx.isEnabled.onNext(value)
+
+                let color = value ? UIColor.black : UIColor.lightGray
+                owner.buttonColor.onNext(color)
+            }
+            .disposed(by: disposeBag)
+
+        buttonColor
+            .bind(to: nextButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        emailTextField.rx.text.orEmpty
+            .bind(with: self) { owner, value in
+                owner.mailValue.onNext(value)
+            }
+            .disposed(by: disposeBag)
+
+        mailValue
+            .bind(with: self) { owner, value in
+                let validate = owner.checkEmail(value)
+                owner.validation.onNext(validate)
+            }
+            .disposed(by: disposeBag)
+
+    }
+
+    func checkEmail(_ mail: String) -> Bool {
+        let regex = "[A-Z0-9a-z._%+-]{2,30}+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: mail)
     }
 
     func configure() {
