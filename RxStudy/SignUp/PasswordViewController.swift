@@ -12,14 +12,14 @@ import RxCocoa
 
 class PasswordViewController: UIViewController {
 
+    let viewModel = PasswordViewModel()
+
     let disposeBag = DisposeBag()
 
     let passwordTextField = SignTextField(placeholderText: "비밀번호를 입력해주세요")
     let nextButton = PointButton(title: "다음")
 
     let buttonColor = BehaviorSubject(value: UIColor.lightGray)
-    let validation = BehaviorSubject(value: false)
-    let passwordValue = BehaviorSubject(value: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +37,14 @@ class PasswordViewController: UIViewController {
     }
 
     func bind() {
-        
-        validation
-            .bind(with: self) { owner, value in
-                owner.nextButton.rx.isEnabled.onNext(value)
 
+        viewModel.validation
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        viewModel.validation
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self) { owner, value in
                 let color = value ? UIColor.black : UIColor.lightGray
                 owner.buttonColor.onNext(color)
             }
@@ -52,16 +55,9 @@ class PasswordViewController: UIViewController {
             .disposed(by: disposeBag)
 
         passwordTextField.rx.text.orEmpty
-            .bind(with: self, onNext: { owner, value in
+            .subscribe(with: viewModel, onNext: { owner, value in
                 owner.passwordValue.onNext(value)
             })
-            .disposed(by: disposeBag)
-
-        passwordValue
-            .map {(6...13).contains($0.count)}
-            .bind(with: self) { owner, value in
-                owner.validation.onNext(value)
-            }
             .disposed(by: disposeBag)
 
     }

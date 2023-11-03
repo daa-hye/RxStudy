@@ -12,14 +12,14 @@ import RxCocoa
 
 class NicknameViewController: UIViewController {
 
+    let viewModel = NicknameViewModel()
+
     let disposeBag = DisposeBag()
 
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
 
     let buttonColor = BehaviorSubject(value: UIColor.lightGray)
-    let validation = BehaviorSubject(value: false)
-    let nicknameValue = BehaviorSubject(value: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,25 +43,24 @@ class NicknameViewController: UIViewController {
             .bind(to: nextButton.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        validation
+        viewModel.validation
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
+        viewModel.validation
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self, onNext: { owner, value in
+                let color = value ? UIColor.black : UIColor.lightGray
+                owner.buttonColor.onNext(color)
+            })
+            .disposed(by: disposeBag)
+
         nicknameTextField.rx.text.orEmpty
-            .bind(with: self) { owner, value in
+            .bind(with: viewModel) { owner, value in
                 owner.nicknameValue.onNext(value)
             }
             .disposed(by: disposeBag)
 
-        nicknameValue
-            .map {(2...6).contains($0.count)}
-            .bind(with: self) { owner, value in
-                owner.validation.onNext(value)
-
-                let color = value ? UIColor.black : UIColor.lightGray
-                owner.buttonColor.onNext(color)
-            }
-            .disposed(by: disposeBag)
     }
 
     func configureLayout() {

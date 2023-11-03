@@ -12,14 +12,14 @@ import RxCocoa
 
 class PhoneViewController: UIViewController {
 
+    let viewModel = PhoneViewModel()
+
     let disposeBag = DisposeBag()
 
     let phoneTextField = SignTextField(placeholderText: "연락처를 입력해주세요")
     let nextButton = PointButton(title: "다음")
 
-    let phoneTextValue = BehaviorSubject(value: "010")
     let buttonColor = BehaviorSubject(value: UIColor.lightGray)
-    let validation = BehaviorSubject(value: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,29 +38,28 @@ class PhoneViewController: UIViewController {
 
     func bind() {
 
-        validation
+        viewModel.validation
             .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        viewModel.validation
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self, onNext: { owner, value in
+                let color = value ? UIColor.black : UIColor.lightGray
+                owner.buttonColor.onNext(color)
+            })
             .disposed(by: disposeBag)
 
         buttonColor
             .bind(to: nextButton.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        phoneTextValue
+        viewModel.phoneTextValue
             .bind(to: phoneTextField.rx.text)
             .disposed(by: disposeBag)
 
-        phoneTextValue
-            .map { $0.count > 12 }
-            .bind(with: self) { owner, value in
-                let color = value ? UIColor.black : UIColor.lightGray
-                owner.buttonColor.onNext(color)
-                owner.validation.onNext(value)
-            }
-            .disposed(by: disposeBag)
-
         phoneTextField.rx.text.orEmpty
-            .bind(with: self) { owner, value in
+            .subscribe(with: viewModel) { owner, value in
                 let result = value.formated(by: "###-####-####")
                 owner.phoneTextValue.onNext(result)
             }

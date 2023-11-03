@@ -12,6 +12,8 @@ import RxCocoa
 
 class BirthdayViewController: UIViewController {
 
+    let viewModel = BirthdayViewModel()
+
     let disposeBag = DisposeBag()
 
     let birthDayPicker: UIDatePicker = {
@@ -67,15 +69,8 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
 
-    let pickedDate = BehaviorSubject(value: Date())
-    
-    let year = BehaviorSubject(value: 0)
-    let month = BehaviorSubject(value: 0)
-    let day = BehaviorSubject(value: 0)
-
     let buttonColor = BehaviorSubject(value: UIColor.lightGray)
-    let age = BehaviorSubject(value: 0.0)
-    let validation = BehaviorSubject(value: false)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,18 +89,31 @@ class BirthdayViewController: UIViewController {
 
     func bind() {
 
-        age
-            .map { $0 >= 17 }
-            .bind(with: self) { owner, value in
-                owner.validation.onNext(value)
-                
-                let color = value ? UIColor.black : UIColor.lightGray
-                owner.buttonColor.onNext(color)
-            }
+        viewModel.validation
+            .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
-        validation
-            .bind(to: nextButton.rx.isEnabled)
+        viewModel.validation
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self, onNext: { owner, value in
+                let color = value ? UIColor.black : UIColor.lightGray
+                owner.buttonColor.onNext(color)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.year
+            .map {"\($0)년"}
+            .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.month
+            .map {"\($0)월"}
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.day
+            .map {"\($0)일"}
+            .bind(to: dayLabel.rx.text)
             .disposed(by: disposeBag)
 
         buttonColor
@@ -113,42 +121,7 @@ class BirthdayViewController: UIViewController {
             .disposed(by: disposeBag)
 
         birthDayPicker.rx.date
-            .bind(to: pickedDate)
-            .disposed(by: disposeBag)
-
-        year
-            .map {"\($0)년"}
-            .bind(to: yearLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        month
-            .map {"\($0)월"}
-            .bind(to: monthLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        day
-            .map {"\($0)일"}
-            .bind(to: dayLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        pickedDate
-            .bind(with: self) { owner, date in
-                let component = Calendar.current.dateComponents([.year, .month, .day], from: date)
-
-                owner.year.onNext(component.year ?? 0)
-                owner.month.onNext(component.month ?? 0)
-                owner.day.onNext(component.day ?? 0)
-            }
-            .disposed(by: disposeBag)
-
-        pickedDate
-            .bind(with: self) { owner, date in
-
-                let interval: Double = date.timeIntervalSinceNow
-                let age = abs(interval / (60 * 60 * 24 * 365))
-                owner.age.onNext(age)
-
-            }
+            .bind(to: viewModel.dateValue)
             .disposed(by: disposeBag)
 
     }
