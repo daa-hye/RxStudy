@@ -31,6 +31,9 @@
 		531CF7BB2AF46A230054A915 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7BA2AF46A230054A915 /* BirthdayViewModel.swift */; };
 		531CF7BD2AF46D290054A915 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7BC2AF46D290054A915 /* NicknameViewModel.swift */; };
 		531CF7BF2AF46ED40054A915 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7BE2AF46ED40054A915 /* PhoneViewModel.swift */; };
+		531CF7D12AF740000054A915 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7CF2AF740000054A915 /* SearchTableViewCell.swift */; };
+		531CF7D22AF740000054A915 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7D02AF740000054A915 /* SearchViewController.swift */; };
+		531CF7D42AF770C10054A915 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531CF7D32AF770C10054A915 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		531CF7BA2AF46A230054A915 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		531CF7BC2AF46D290054A915 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 		531CF7BE2AF46ED40054A915 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		531CF7CF2AF740000054A915 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		531CF7D02AF740000054A915 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		531CF7D32AF770C10054A915 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		531CF7662AF1B3B60054A915 /* RxStudy */ = {
 			isa = PBXGroup;
 			children = (
+				531CF7CE2AF73FDC0054A915 /* Search */,
 				531CF7892AF215110054A915 /* CustomView */,
 				531CF7822AF215110054A915 /* SignIn */,
 				531CF78C2AF215110054A915 /* SignUp */,
@@ -148,6 +155,16 @@
 				531CF7BE2AF46ED40054A915 /* PhoneViewModel.swift */,
 			);
 			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		531CF7CE2AF73FDC0054A915 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				531CF7CF2AF740000054A915 /* SearchTableViewCell.swift */,
+				531CF7D02AF740000054A915 /* SearchViewController.swift */,
+				531CF7D32AF770C10054A915 /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531CF7D42AF770C10054A915 /* SearchViewModel.swift in Sources */,
 				531CF7B02AF217770054A915 /* SignInViewController.swift in Sources */,
 				531CF7B92AF469080054A915 /* PasswordViewModel.swift in Sources */,
 				531CF7BD2AF46D290054A915 /* NicknameViewModel.swift in Sources */,
@@ -238,11 +256,13 @@
 				531CF78F2AF215110054A915 /* SignInViewModel.swift in Sources */,
 				531CF7BF2AF46ED40054A915 /* PhoneViewModel.swift in Sources */,
 				531CF76C2AF1B3B60054A915 /* ViewController.swift in Sources */,
+				531CF7D12AF740000054A915 /* SearchTableViewCell.swift in Sources */,
 				531CF7942AF215110054A915 /* PointButton.swift in Sources */,
 				531CF7AC2AF2170F0054A915 /* BirthdayViewController.swift in Sources */,
 				531CF7B72AF459390054A915 /* SignUpViewModel.swift in Sources */,
 				531CF7682AF1B3B60054A915 /* AppDelegate.swift in Sources */,
 				531CF7972AF215110054A915 /* PasswordViewController.swift in Sources */,
+				531CF7D22AF740000054A915 /* SearchViewController.swift in Sources */,
 				531CF7AD2AF2170F0054A915 /* NicknameViewController.swift in Sources */,
 				531CF76A2AF1B3B60054A915 /* SceneDelegate.swift in Sources */,
 				531CF7952AF215110054A915 /* SignTextField.swift in Sources */,
