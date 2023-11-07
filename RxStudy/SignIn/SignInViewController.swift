@@ -41,7 +41,11 @@ class SignInViewController: UIViewController {
     
     func bind() {
 
-        viewModel.validation
+        let input = SignInViewModel.Input(emailValue: emailTextField.rx.text, passwordValue: passwordTextField.rx.text)
+
+        let output = viewModel.transform(input: input)
+
+        output.validation
             .subscribe(with: self) { owner, value in
                 owner.signInButton.rx.isEnabled.onNext(value)
 

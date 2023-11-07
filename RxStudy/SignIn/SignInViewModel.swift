@@ -7,14 +7,27 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class SignInViewModel {
 
-    let emailValue = PublishSubject<String>()
-    let passwordValue = PublishSubject<String>()
+    struct Input {
+        let emailValue: ControlProperty<String?>
+        let passwordValue: ControlProperty<String?>
+    }
 
-    lazy var validation = Observable.combineLatest(emailValue, passwordValue) { first, second in
-        return first.count > 8 && second.count >= 6
+    struct Output {
+        let validation: Observable<Bool>
+    }
+
+    func transform(input: Input) -> Output {
+
+        return Output(validation: Observable
+            .combineLatest(input.emailValue.orEmpty,
+                           input.passwordValue.orEmpty) { first, second in
+            return first.count > 8 && second.count >= 6
+        })
+
     }
 
 }
